@@ -34,4 +34,4 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style lang="">
 
-    </style>
+</style>
