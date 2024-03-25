@@ -26,7 +26,8 @@ console.log(accommodations)
     </div>
 </template>
 
-<style>
+<style scoped>
+
 .img-square {
     object-fit: cover;
     aspect-ratio: 50/50;

@@ -3,11 +3,11 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template lang="">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
         <div class="container-fluid">
-            <div class= "tsh-navbar-container">
+            <div class= "navbar-container">
                 <RouterLink to="/" class="navbar-brand">TSH</RouterLink>
-                <div class="tsh-navbar-search">
+                <div class="navbar-search">
                     <form class="d-flex" role="search">
                         <input class="form-control" type="search" placeholder="Recherchez" aria-label="Search">
                         <button class="btn" type="submit"><img src="/public/icons/search.svg" alt="Bouton rechercher" title="Recherchez" width="24"></button>
@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from 'vue-router'
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="tsh-navbar-ul">
+                <ul class="navbar-ul">
                     <li class="nav-item">
                         <RouterLink class="nav-link active" aria-current="page" to="/connexion">Connexion</RouterLink>
                     </li>
@@ -32,6 +32,41 @@ import { RouterLink, RouterView } from 'vue-router'
     </nav>
 </template>
 
-<style lang="">
+<style scoped>
+.navbar-container{
+    display: flex;
+}
+.navbar-search{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.navbar-search input {
+    height: 40px;
+    width: 120px;
+}
 
+.navbar-ul{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    list-style-type: none;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+@media screen and (min-width: 412px) {
+    .navbar-search input {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-ul{
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
 </style>
