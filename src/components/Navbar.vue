@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template lang="">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary position-sticky">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
             <div class= "tsh-navbar-container">
                 <RouterLink to="/" class="navbar-brand">TSH</RouterLink>
