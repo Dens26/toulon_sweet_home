@@ -9,11 +9,7 @@
 }
 .tsh-navbar-search input {
     height: 40px;
-    width: 130px;
-}
-.tsh-navbar-search button {
-    position: absolute;
-    right: 6px;
+    width: 120px;
 }
 
 .tsh-navbar-ul{
