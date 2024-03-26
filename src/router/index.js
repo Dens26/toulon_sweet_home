@@ -19,7 +19,7 @@ const router = createRouter({
       component: AccommodationView
     },
     {
-      path: '/gallerie-photo/:id',
+      path: '/galerie-photo',
       name: 'photo_gallery',
       component: PhotoGalleryView
     },
