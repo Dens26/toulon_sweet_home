@@ -1,6 +1,7 @@
 <script setup>
 import { useDataStore } from '../stores/data.js'
 import { RouterLink } from 'vue-router'
+import Navbar from '../components/Navbar_secondary.vue'
 
 const dataStore = useDataStore()
 
@@ -15,11 +16,7 @@ accommodation = dataStore.getAccommodation()
 </script>
 
 <template>
-    <div class="sticky-top p-1 tsh-sticky m-0 tsh-sticky">
-        <RouterLink class="btn btn-primary text-decoration-none m-3" to="/">
-            Revenir
-            au Logements</RouterLink>
-    </div>
+    <Navbar></Navbar>
     <div v-if="accommodation" class="container-fluid mt-4 tsh-container">
         <div class="mt-4">
             <RouterLink to="/galerie-photo">
@@ -102,7 +99,7 @@ accommodation = dataStore.getAccommodation()
                     <p class="card-text fs-6 m-1" v-html="accommodation.description"></p>
                 </div>
                 <div class="col-5">
-                    <div class="sticky-top pt-4">
+                    <div class="tsh-sticky">
                         <div class="border bg-light rounded-4 text-center p-2">
                             <button class="btn btn-lg btn-success m-3">Réserver</button>
                             <p class="card-text"><span class="h5">{{ accommodation.price + " €" }}</span> par nuit
@@ -172,29 +169,8 @@ export default {
 
 <style scoped>
 .tsh-sticky {
-    background-color: white;
-}
-
-.img-4-3 {
-    object-fit: cover;
-    aspect-ratio: 4/3;
-    border-radius: 25px;
-}
-
-.img-square {
-    object-fit: cover;
-    aspect-ratio: 50/50;
-    border-radius: 15px;
-}
-
-.img-16_10 {
-    object-fit: cover;
-    aspect-ratio: 16/10;
-    border-radius: 15px;
-}
-
-.tsh-container {
-    max-width: 1200px;
+    position: sticky;
+    top : 5.5rem;
 }
 
 .tsh-picture {

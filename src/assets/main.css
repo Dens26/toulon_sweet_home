@@ -1,2 +1,23 @@
 @import './base.css';
 
+.tsh-container{
+    max-width: 1200px;
+}
+
+.img-4-3 {
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    border-radius: 25px;
+}
+
+.img-square {
+    object-fit: cover;
+    aspect-ratio: 50/50;
+    border-radius: 15px;
+}
+
+.img-16_10 {
+    object-fit: cover;
+    aspect-ratio: 16/10;
+    border-radius: 15px;
+}

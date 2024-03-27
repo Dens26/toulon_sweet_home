@@ -1,5 +1,5 @@
 <script setup>
-  import Navbar from '../components/Navbar.vue'
+  import Navbar from '../components/Navbar_main.vue'
   import GetAccommodations from '../components/GetAccommodations.vue'
 </script>
 

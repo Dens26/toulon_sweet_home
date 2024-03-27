@@ -4,19 +4,19 @@ import { RouterLink } from 'vue-router'
 const dataStore = useDataStore()
 
 const accommodation = dataStore.getAccommodation()
-console.log(accommodation)
+
 </script>
 
 <template>
-    <div class="sticky-top p-1 tsh-sticky m-0 tsh-sticky">
-        <RouterLink class="btn btn-primary text-decoration-none m-3" v-bind:to="'/logement/' + accommodation.id">Revenir
-            au descriptif</RouterLink>
+    <div class="sticky-top tsh-sticky bg-light">
+        <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="'/logement/' + accommodation.id">Retour au Logement</RouterLink>
     </div>
     <div class="container-fluid mt-4">
         <div class="tsh-container tsh-grid">
             <div v-for="(picture, index) in accommodation.pictures" :key="index">
                 <div v-if="index % 3 == 0">
-                    <img class="w-100 img-16_10 p-1" v-bind:src="picture.file_big" :alt="picture.name">
+                    <RouterLink v-bind:to="'/photo/' + picture.id"><img class="w-100 img-16_10 p-1"
+                            v-bind:src="picture.file_big" :alt="picture.name"></RouterLink>
                 </div>
                 <div v-else-if="(index + 2) % 3 == 0">
                     <img class="w-50 img-16_10 p-1" :src="picture.file_big" :alt="picture.name">
@@ -32,19 +32,11 @@ console.log(accommodation)
 
 
 <style scoped>
-.tsh-sticky{
-    background-color: white;
-}
+
 .tsh-container {
-    max-width: 768px;
+    max-width: 992px;
     margin: 0 auto;
     margin-top: 15px;
     display: grid;
-}
-
-.img-16_10 {
-    object-fit: cover;
-    aspect-ratio: 16/10;
-    border-radius: 20px;
 }
 </style>

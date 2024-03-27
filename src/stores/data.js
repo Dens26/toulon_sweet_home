@@ -2,9 +2,11 @@ import { defineStore } from 'pinia'
 
 export const useDataStore = defineStore('data', {
   state: () => ({
+    // Accommodation
     accommodation: {}
   }),
   actions: {
+    // Accommodation
     setAccommodation(accommodation) {
       this.accommodation = accommodation
       localStorage.setItem('accommodation', JSON.stringify(this.accommodation))
@@ -19,12 +21,26 @@ export const useDataStore = defineStore('data', {
       this.accommodation.host = host
       localStorage.setItem('accommodation', JSON.stringify(this.accommodation))
     },
+    getAccommodationId() {
+      const accommodation = localStorage.getItem('accommodation')
+      if (accommodation) {
+        this.accommodation = JSON.parse(accommodation)
+      }
+      return this.accommodation.id
+    },
     getAccommodation() {
       const accommodation = localStorage.getItem('accommodation')
       if (accommodation) {
         this.accommodation = JSON.parse(accommodation)
       }
       return this.accommodation
+    },
+    getPictures() {
+      const accommodation = localStorage.getItem('accommodation')
+      if (accommodation) {
+        this.accommodation = JSON.parse(accommodation)
+      }
+      return this.accommodation.pictures
     }
   }
 })

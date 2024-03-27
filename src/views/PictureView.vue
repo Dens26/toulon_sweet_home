@@ -1,0 +1,42 @@
+<script setup>
+import { useDataStore } from '@/stores/data'
+import Navbar_secondary from '../components/Navbar_secondary.vue'
+
+const dataStore = useDataStore()
+const pictures = dataStore.getPictures()
+const accommodationId = dataStore.getAccommodationId()
+console.log(pictures)
+</script>
+
+<template>
+    <div class="sticky-top tsh-sticky bg-light">
+        <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="'/galerie-photo'">Galerie photo</RouterLink>
+    </div>
+    <div id="carousel" class="carousel slide container-fluid tsh-container mt-4">
+        <div class="carousel-inner">
+            <div v-for="(picture, index) in pictures" v-bind:key="index" class="carousel-item"
+                v-bind:class="{ 'active': index === 0 }">
+                <img v-bind:src="picture.file_big" class="d-block w-100 img-fluid img-16_10"
+                    v-bind:alt="'photo ' + picture.name">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+
+</style>

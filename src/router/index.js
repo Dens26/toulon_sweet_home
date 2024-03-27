@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import AccommodationView from '../views/AccommodationView.vue'
 import PhotoGalleryView from '../views/PhotoGalleryView.vue'
+import PictureView from '../views/PictureView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/galerie-photo',
       name: 'photo_gallery',
       component: PhotoGalleryView
+    },
+    {
+      path: '/photo/:id',
+      name: 'picture',
+      component: PictureView
     },
     {
       path: '/connexion',
