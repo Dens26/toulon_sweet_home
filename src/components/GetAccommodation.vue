@@ -1,7 +1,6 @@
 <script setup>
 import { useDataStore } from '../stores/data.js'
 import { RouterLink } from 'vue-router'
-import Navbar from '../components/Navbar_secondary.vue'
 
 const dataStore = useDataStore()
 
@@ -16,7 +15,6 @@ accommodation = dataStore.getAccommodation()
 </script>
 
 <template>
-    <Navbar></Navbar>
     <div v-if="accommodation" class="container-fluid mt-4 tsh-container">
         <div class="mt-4">
             <RouterLink to="/galerie-photo">
@@ -82,7 +80,7 @@ accommodation = dataStore.getAccommodation()
                 <div class="col-7">
                     <h1 class="card-title">{{ accommodation.name }}</h1>
                     <p class="card-text fs-6 m-1">{{ accommodation.streetNumber }} {{ accommodation.streetNam }} - ({{
-            accommodation.postal }}) {{ accommodation.city }} - {{ accommodation.country }}</p>
+        accommodation.postal }}) {{ accommodation.city }} - {{ accommodation.country }}</p>
                     <p class="card-text fs-6 m-1">{{ accommodation.nbrOfRooms }} chambres - {{ accommodation.maxPerson
                         }} personnes.</p>
                     <hr>
@@ -90,7 +88,7 @@ accommodation = dataStore.getAccommodation()
                         <img class="tsh-picture" v-bind:src="accommodation.host.picture" alt="Photo de l'hote">
                         <div>
                             <p class="card-text fs-6 m-1">Proposé par : {{ accommodation.host.firstName }} {{
-            accommodation.host.lastName }}</p>
+        accommodation.host.lastName }}</p>
                             <p class="card-text fs-6 m-1">Déjà {{ seniority(accommodation.host.createdAt) }} ans
                                 d'expérience</p>
                         </div>
@@ -108,11 +106,12 @@ accommodation = dataStore.getAccommodation()
                     </div>
                 </div>
             </div>
+            
             <div v-else class="row g-4 mt-2">
                 <div>
                     <h1 class="card-title">{{ accommodation.name }}</h1>
                     <p class="card-text fs-6 m-1">{{ accommodation.streetNumber }} {{ accommodation.streetName }} - ({{
-            accommodation.postal }}) {{ accommodation.city }} - {{ accommodation.country }}</p>
+        accommodation.postal }}) {{ accommodation.city }} - {{ accommodation.country }}</p>
                     <p class="card-text fs-6 m-1">{{ accommodation.nbrOfRooms }} chambres - {{ accommodation.maxPerson
                         }} personnes.</p>
                     <hr>
@@ -120,7 +119,7 @@ accommodation = dataStore.getAccommodation()
                         <img class="tsh-picture" v-bind:src="accommodation.host.picture" alt="Photo de l'hote">
                         <div>
                             <p class="card-text fs-6 m-1">Proposé par : {{ accommodation.host.firstName }} {{
-            accommodation.host.lastName }}</p>
+        accommodation.host.lastName }}</p>
                             <p class="card-text fs-6 m-1">Déjà {{ seniority(accommodation.host.createdAt) }} ans
                                 d'expérience</p>
                         </div>
@@ -170,7 +169,7 @@ export default {
 <style scoped>
 .tsh-sticky {
     position: sticky;
-    top : 5.5rem;
+    top: 5.5rem;
 }
 
 .tsh-picture {
