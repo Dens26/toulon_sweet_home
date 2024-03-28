@@ -2,10 +2,37 @@ import { defineStore } from 'pinia'
 
 export const useDataStore = defineStore('data', {
   state: () => ({
+    // User
+    user: {
+      "email": '',
+      "password": ''
+    },
     // Accommodation
     accommodation: {}
   }),
   actions: {
+    // User
+    async userLogin() {
+      try {
+        const requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(this.user)
+        };
+        const response = await fetch("localhost/auth", requestOptions);
+        if (!response.ok) {
+          throw new Error(`Failed to log in: ${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        // Handle the response data according to your application's needs
+        console.log("Login successful:", data);
+      } catch (error) {
+        console.error("An error occurred during login:", error.message);
+        // Optionally, you can set an error state or display an error message to the user
+      }
+    },
     // Accommodation
     setAccommodation(accommodation) {
       this.accommodation = accommodation

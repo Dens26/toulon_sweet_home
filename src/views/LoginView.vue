@@ -1,10 +1,9 @@
 <script setup>
 import Navbar from '../components/Navbar_secondary.vue'
+import Login from '../components/Login.vue'
 </script>
 
 <template>
-  <div>
     <Navbar></Navbar>
-    <h1>Connexion</h1>
-  </div>
+    <Login></Login>
 </template>

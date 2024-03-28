@@ -11,7 +11,7 @@ const accommodation = dataStore.getAccommodation()
     <div class="sticky-top tsh-sticky bg-light">
         <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="'/logement/' + accommodation.id">Retour au Logement</RouterLink>
     </div>
-    <div class="container-fluid mt-4">
+    <div class="container-fluid p-4 tsh-container">
         <div class="tsh-container tsh-grid">
             <div v-for="(picture, index) in accommodation.pictures" :key="index">
                 <div v-if="index % 3 == 0">

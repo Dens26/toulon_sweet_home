@@ -15,7 +15,7 @@ accommodation = dataStore.getAccommodation()
 </script>
 
 <template>
-    <div v-if="accommodation" class="container-fluid mt-4 tsh-container">
+    <div v-if="accommodation" class="container-fluid p-4 tsh-container">
         <div class="mt-4">
             <RouterLink to="/galerie-photo">
                 <div class="card border-0">

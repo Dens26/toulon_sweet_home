@@ -9,7 +9,7 @@ const pictures = dataStore.getPictures()
     <div class="sticky-top tsh-sticky bg-light">
         <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="'/galerie-photo'">Galerie photo</RouterLink>
     </div>
-    <div id="carousel" class="carousel slide container-fluid tsh-container mt-4">
+    <div id="carousel" class="carousel slide container-fluid p-4 tsh-container">
         <div class="carousel-inner">
             <div v-for="(picture, index) in pictures" v-bind:key="index" class="carousel-item"
                 v-bind:class="{ 'active': index === 0 }">
