@@ -7,7 +7,8 @@ const pictures = dataStore.getPictures()
 
 <template>
     <div class="sticky-top tsh-sticky bg-light">
-        <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="'/galerie-photo'">Galerie photo</RouterLink>
+        <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="{ name: 'photo_gallery' }">Galerie
+            photo</RouterLink>
     </div>
     <div id="carousel" class="carousel slide container-fluid p-4 tsh-container">
         <div class="carousel-inner">

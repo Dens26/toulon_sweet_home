@@ -17,7 +17,7 @@ accommodation = dataStore.getAccommodation()
 <template>
     <div v-if="accommodation" class="container-fluid p-4 tsh-container">
         <div class="mt-4">
-            <RouterLink to="/galerie-photo">
+            <RouterLink v-bind:to="{ name:'photo_gallery'}">
                 <div class="card border-0">
                     <div v-if="md" id="carousel-accommodation" class="carousel slide">
                         <div class="carousel-inner">

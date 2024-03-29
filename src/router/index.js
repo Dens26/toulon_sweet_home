@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useDataStore } from '@/stores/data'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
@@ -40,6 +41,17 @@ const router = createRouter({
       component: RegisterView
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const dataStore = useDataStore()
+  dataStore.getConnectionStatus()
+  if (to.name === 'login' && dataStore.connectionStatus.value === true) {
+    next({ name: 'home' })
+  }
+  else {
+    next()
+  }
 })
 
 export default router

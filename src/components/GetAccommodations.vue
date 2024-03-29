@@ -16,7 +16,7 @@ console.log(accommodations)
     <div class="container-fluid p-4 tsh-container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
             <div class="col" v-for="accommodation in accommodations" :key="accommodation.id">
-                <RouterLink v-bind:to="'/logement/'+ accommodation.id" class="card h-100 border-0" v-on:click="dataStore.setAccommodation(accommodation)">
+                <RouterLink :to="{ name: 'accommodation', params: { id: accommodation.id }}" class="card h-100 border-0" v-on:click="dataStore.setAccommodation(accommodation)">
                         <div v-bind:id="'carousel-' + accommodation.id" class="carousel slide">
                             <div class="carousel-inner">
                                 <div v-for="(picture, index) in accommodation.pictures" :key="index"
