@@ -8,7 +8,6 @@ const dataStore = useDataStore()
 const promesse = await fetch('http://localhost/api/accommodations')
 const response = await promesse.json()
 const accommodations = response['hydra:member'];
-console.log(accommodations)
 
 </script>
 

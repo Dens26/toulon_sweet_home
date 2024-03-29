@@ -7,3 +7,13 @@ import PhotoGallery from '../components/PhotoGallery.vue'
         <PhotoGallery></PhotoGallery>
     </div>
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

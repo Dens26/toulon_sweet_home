@@ -15,12 +15,12 @@ dataStore.getConnectionStatus();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-ul">
             <li class="nav-item">
-                <RouterLink class="nav-link active" aria-current="page" v-bind:to="{name:'login'}">{{ dataStore.navbar.account.name
+                <RouterLink class="nav-link active" aria-current="page" v-bind:to="{name:dataStore.navbar.account.route}">{{ dataStore.navbar.account.name
                     }}</RouterLink>
             </li>
             <li class="nav-item">
-                <RouterLink class="nav-link active" aria-current="page" v-bind:to="{name : 'register'}">
-                    {{ dataStore.navbar.inscription.name }}</RouterLink>
+                <RouterLink class="nav-link active" aria-current="page" v-bind:to="{name : dataStore.navbar.registration.route}">
+                    {{ dataStore.navbar.registration.name }}</RouterLink>
             </li>
         </ul>
     </div>

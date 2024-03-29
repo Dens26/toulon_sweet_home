@@ -8,3 +8,13 @@ import Navbar from '../components/Navbar_secondary.vue'
     <h1>Inscription</h1>
   </div>
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+
+</style>
