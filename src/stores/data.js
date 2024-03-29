@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
 import { emailVerification, passwordVerification } from '../functions/validationForm.js'
+import { useRouter } from 'vue-router'
 
 export const useDataStore = defineStore('data', {
   state: () => ({
+    router: useRouter(),
     // Connection status
     connectionStatus: {
       value: ''
@@ -15,7 +17,7 @@ export const useDataStore = defineStore('data', {
         route: '',
         class: ''
       },
-      inscription: {
+      registration: {
         name: '',
         route: ''
       },
@@ -26,7 +28,7 @@ export const useDataStore = defineStore('data', {
       "email": '',
       "password": ''
     },
-    payload: {},
+    token: {},
 
     // Accommodation
     accommodation: {},
@@ -66,22 +68,23 @@ export const useDataStore = defineStore('data', {
     },
   }),
   actions: {
+    //#region Authentification
     setConnecionStatus(value) {
       if (value) {
         this.connectionStatus.value = true
         this.navbar.account.name = 'Mon Compte'
-        this.navbar.account.route = "/mon-compte"
-        this.navbar.account.class = 'btn btn-success'
-        this.navbar.inscription.name = ''
-        this.navbar.inscription.route = ''
+        this.navbar.account.route = "account"
+        this.navbar.account.class = 'btn btn-success text-red'
+        this.navbar.registration.name = ''
+        this.navbar.registration.route = ''
       }
       else {
         this.connectionStatus.value = false
         this.navbar.account.name = 'Connexion'
-        this.navbar.account.route = "/connexion"
+        this.navbar.account.route = "login"
         this.navbar.account.class = ''
-        this.navbar.inscription.name = 'Inscription'
-        this.navbar.inscription.route = "/inscription"
+        this.navbar.registration.name = 'Inscription'
+        this.navbar.registration.route = "register"
       }
       localStorage.setItem('connectionStatus', JSON.stringify(this.connectionStatus))
     },
@@ -90,12 +93,21 @@ export const useDataStore = defineStore('data', {
       if (connectionStatus) {
         this.setConnecionStatus(JSON.parse(connectionStatus).value)
       }
-      else{
+      else {
         this.setConnecionStatus(false)
       }
 
       return this.connectionStatus
     },
+    getpayload() {
+      const token = localStorage.getItem('token')
+      if (token) {
+        this.token = JSON.parse(token)
+      }
+      const parts = this.token.split('.')
+      return JSON.parse(atob(parts[1]))
+    },
+    //#endregion
     //#region user
     /**
      * Attempts to connect the user to the API and retrieve the connection token
@@ -133,19 +145,20 @@ export const useDataStore = defineStore('data', {
             throw new Error(`Echec de connexion: ${response.status} ${response.statusText}`)
           }
           else {
-            const data = await response.json();
+            const data = await response.json()
 
-            const token = data.token;
-            const parts = token.split('.');
-            const payload = JSON.parse(atob(parts[1]));
+            this.token = data.token;
+            localStorage.setItem('token', JSON.stringify(this.token))
 
             // Update connection status to true
             this.setConnecionStatus(true)
+
             this.alertMessage = {
-              "type": "success",
-              "message": "Félicitation"
+              "type": "",
+              "message": ""
             }
           }
+          this.router.push({ name: 'home' })
         } catch (error) {
           this.setConnecionStatus(false)
           this.alertMessage = {
@@ -154,6 +167,10 @@ export const useDataStore = defineStore('data', {
           }
         }
       }
+    },
+    userLogout() {
+      localStorage.removeItem('token')
+      localStorage.removeItem('connectionStatus')
     },
     //#endregion
 

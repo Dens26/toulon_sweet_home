@@ -14,3 +14,13 @@ import Navbar from '../components/Navbar_secondary.vue'
     </template>
   </Suspense>
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+
+</style>

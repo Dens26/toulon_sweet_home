@@ -26,5 +26,4 @@ const dataStore = useDataStore();
 .tsh-container {
     max-width: 576px;
 }
-
 </style>
