@@ -1,13 +1,13 @@
 <script setup>
   import Navbar from '../components/Navbar_main.vue'
-  import GetAccommodations from '../components/GetAccommodations.vue'
+  import Accommodations from '../components/Accommodations.vue'
 </script>
 
 <template>
   <Navbar></Navbar>
   <Suspense>
     <template #default>
-      <GetAccommodations></GetAccommodations>
+      <Accommodations></Accommodations>
     </template>
     <template #fallback>
       En cours de chargement ...

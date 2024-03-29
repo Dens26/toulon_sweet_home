@@ -1,9 +1,9 @@
 <script setup>
-import ShowPicture from '../components/ShowPicture.vue'
+import Picture_show from '../components/Picture_show.vue'
 </script>
 
 <template>
-    <ShowPicture></ShowPicture>
+    <Picture_show></Picture_show>
 </template>
 
 <script>

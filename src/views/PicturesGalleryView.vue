@@ -1,10 +1,10 @@
 <script setup>
-import PhotoGallery from '../components/PhotoGallery.vue'
+import Pictures_gallery from '../components/Pictures_gallery.vue'
 </script>
 
 <template>
     <div>
-        <PhotoGallery></PhotoGallery>
+        <Pictures_gallery></Pictures_gallery>
     </div>
 </template>
 

@@ -4,8 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import AccommodationView from '../views/AccommodationView.vue'
-import PhotoGalleryView from '../views/PhotoGalleryView.vue'
-import PictureView from '../views/PictureView.vue'
+import PicturesGalleryView from '../views/PicturesGalleryView.vue'
+import PictureShowView from '../views/PictureShowView.vue'
 import AccountView from '../views/AccountView.vue'
 
 const router = createRouter({
@@ -27,12 +27,12 @@ const router = createRouter({
     {
       path: '/galerie-photo',
       name: 'photo_gallery',
-      component: PhotoGalleryView
+      component: PicturesGalleryView
     },
     {
       path: '/photo/:id',
       name: 'picture',
-      component: PictureView
+      component: PictureShowView
     },
 
     // Account

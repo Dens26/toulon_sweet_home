@@ -20,7 +20,7 @@ const accommodations = response['hydra:member'];
                             <div class="carousel-inner">
                                 <div v-for="(picture, index) in accommodation.pictures" :key="index"
                                     class="carousel-item" v-bind:class="{ 'active': index === 0 }">
-                                    <img v-bind:src="picture.file_small" class="d-block w-100 img-fluid img-square"
+                                    <img v-bind:src="picture.file_small" class="d-block w-100 img-fluid img-4-3"
                                         v-bind:alt="'photo ' + accommodation.name">
                                 </div>
                             </div>
