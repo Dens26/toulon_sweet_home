@@ -41,30 +41,17 @@ export const useDataStore = defineStore('data', {
     // Form validation
     loginFormValid: {
       emailValid: false,
-      passwordValid: false,
+      passwordValid: false
     },
     // Form validation
     registerFormValid: {
       emailValid: false,
-      passwordValid: false,
-      firstNameValid: false,
-      lastNameValid: false,
-      mobileValid: false,
-      birthdayValid: false
+      passwordValid: false
     },
     // Error management
     error: {
       emailError: "",
-      passwordError: "",
-      confirmPasswordError: "",
-
-      firstNameError: "",
-      lastNameError: "",
-      mobileError: "",
-      birthdayError: "",
-      addAccommodationError: "",
-
-      registerError: ""
+      passwordError: ""
     },
   }),
   actions: {
@@ -108,6 +95,7 @@ export const useDataStore = defineStore('data', {
       return JSON.parse(atob(parts[1]))
     },
     //#endregion
+    
     //#region user
     /**
      * Attempts to connect the user to the API and retrieve the connection token
