@@ -9,13 +9,14 @@ const accommodation = dataStore.getAccommodation()
 
 <template>
     <div class="sticky-top tsh-sticky bg-light">
-        <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3" v-bind:to="'/logement/' + accommodation.id">Retour au Logement</RouterLink>
+        <RouterLink class="btn btn-secondary btn-sm text-decoration-none m-3"
+            v-bind:to="{ name: 'accommodation', params: { id: accommodation.id } }">Retour au Logement</RouterLink>
     </div>
-    <div class="container-fluid mt-4">
+    <div class="container-fluid p-4 tsh-container">
         <div class="tsh-container tsh-grid">
             <div v-for="(picture, index) in accommodation.pictures" :key="index">
                 <div v-if="index % 3 == 0">
-                    <RouterLink v-bind:to="'/photo/' + picture.id"><img class="w-100 img-16_10 p-1"
+                    <RouterLink v-bind:to="{ name: 'picture', params: { id: picture.id } }"><img class="w-100 img-16_10 p-1"
                             v-bind:src="picture.file_big" :alt="picture.name"></RouterLink>
                 </div>
                 <div v-else-if="(index + 2) % 3 == 0">
@@ -32,7 +33,6 @@ const accommodation = dataStore.getAccommodation()
 
 
 <style scoped>
-
 .tsh-container {
     max-width: 992px;
     margin: 0 auto;
