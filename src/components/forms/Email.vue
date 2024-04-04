@@ -5,7 +5,7 @@ const dataStore = useDataStore();
 
 <template>
     <div class="mb-2">
-        <label for="email" class="form-label m-0 p-2">Adresse e-mail</label>
+        <label for="email" class="form-label m-0 p-1">Adresse e-mail</label>
         <span class="d-flex">
             <input v-model="dataStore.user.email" type="email" class="form-control" id="email"
                 aria-describedby="emailHelp" placeholder="Saisissez votre adresse e-mail" required>

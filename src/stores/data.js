@@ -1,5 +1,13 @@
 import { defineStore } from 'pinia'
-import { emailVerification, passwordVerification } from '../functions/validationForm.js'
+import { 
+  emailVerification,
+  passwordVerification,
+  passwordConfirmationVerification,
+  firstNameVerification,
+  lastNameVerification,
+  userNameVerification,
+  phoneNumberVerification
+ } from '../functions/validationForm.js'
 import { useRouter } from 'vue-router'
 
 export const useDataStore = defineStore('data', {
@@ -25,8 +33,13 @@ export const useDataStore = defineStore('data', {
 
     // User
     user: {
-      "email": '',
-      "password": ''
+      email: '',
+      password: '',
+      passwordConfirm: '',
+      firstName: '',
+      lastName: '',
+      userName: '',
+      phoneNumber: ''
     },
     token: {},
 
@@ -46,12 +59,22 @@ export const useDataStore = defineStore('data', {
     // Form validation
     registerFormValid: {
       emailValid: false,
-      passwordValid: false
+      passwordValid: false,
+      passwordConfirmValid: false,
+      firstNameValid: false,
+      lastNameValid: false,
+      userNameValid: false,
+      phoneNumberValid: false
     },
     // Error management
     error: {
-      emailError: "",
-      passwordError: ""
+      emailError: '',
+      passwordError: '',
+      passwordConfirmError: '',
+      firstNameError: '',
+      lastNameError: '',
+      userNameError: '',
+      phoneNumberError: ''
     },
   }),
   actions: {
@@ -155,6 +178,9 @@ export const useDataStore = defineStore('data', {
           }
         }
       }
+    },
+    userRegister(){
+
     },
     userLogout() {
       localStorage.removeItem('token')
@@ -262,6 +288,26 @@ export const useDataStore = defineStore('data', {
      */
     passwordVerification(state) {
       return passwordVerification(state)
+    },
+
+    passwordConfirmationVerification(state){
+      return passwordConfirmationVerification(state)
+    },
+
+    firstNameVerification(state){
+      return firstNameVerification(state)
+    },
+
+    lastNameVerification(state){
+      return lastNameVerification(state)
+    },
+
+    userNameVerification(state){
+      return userNameVerification(state)
+    },
+
+    phoneNumberVerification(state){
+      return phoneNumberVerification(state)
     }
   }
 })
