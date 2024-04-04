@@ -1,5 +1,5 @@
 <script setup>
-import Carousel from '@/components/Carousel.vue'
+import Carousel from '@/components/common/Carousel.vue'
 import { RouterLink } from 'vue-router'
 import {useDataStore} from '@/stores/data.js'
 const dataStore = useDataStore()

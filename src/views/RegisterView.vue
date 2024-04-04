@@ -1,5 +1,5 @@
 <script setup>
-import Navbar from '@/components/Navbar_secondary.vue'
+import Navbar from '@/components/navbar/Navbar_secondary.vue'
 import Email from '@/components/forms/Email.vue'
 import UserName from '@/components/forms/UserName.vue'
 import FirstName from '@/components/forms/FirstName.vue'

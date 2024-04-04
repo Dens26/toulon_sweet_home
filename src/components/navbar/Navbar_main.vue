@@ -1,9 +1,9 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import NavbarTemplate from '@/components/Navbar_template.vue'
+import NavbarTemplate from '@/components/navbar/Navbar_template.vue'
 </script>
 
-<template lang="">
+<template>
     <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
         <div class="container-fluid">
             <div class= "navbar-container">

@@ -1,10 +1,10 @@
 <script setup>
-  import Navbar from '../components/Navbar_main.vue'
-  import Accommodations from '../components/Accommodations.vue'
+  import Navbar from '../components/navbar/Navbar_main.vue'
+  import Accommodations from '../components/accommodation/Accommodations.vue'
 </script>
 
 <template>
-  <Navbar></Navbar>
+  <!-- <Navbar></Navbar> -->
   <Suspense>
     <template #default>
       <Accommodations></Accommodations>

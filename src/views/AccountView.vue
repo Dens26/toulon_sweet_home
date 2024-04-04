@@ -1,5 +1,5 @@
 <script setup>
-import Navbar from '@/components/Navbar_secondary.vue'
+import Navbar from '@/components/navbar/Navbar_secondary.vue'
 import { useDataStore } from '@/stores/data';
 import { RouterLink } from 'vue-router';
 const dataStore = useDataStore()

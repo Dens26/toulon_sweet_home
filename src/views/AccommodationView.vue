@@ -1,6 +1,6 @@
 <script setup>
-import Accommodation from '../components/Accommodation.vue'
-import Navbar from '../components/Navbar_secondary.vue'
+import Accommodation from '../components/accommodation/Accommodation.vue'
+import Navbar from '../components/navbar/Navbar_secondary.vue'
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup>
-import Carousel from '@/components/Carousel.vue'
-import Picture from '@/components/Picture.vue'
-import AccommodationDescription from '@/components/Accommodation_description.vue'
+import Carousel from '@/components/common/Carousel.vue'
+import Picture from '@/components/common/Picture.vue'
+import AccommodationDescription from '@/components/accommodation/Accommodation_description.vue'
 import { useDataStore } from '@/stores/data.js'
 import { RouterLink } from 'vue-router'
 

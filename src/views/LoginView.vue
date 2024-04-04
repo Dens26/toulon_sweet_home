@@ -1,5 +1,5 @@
 <script setup>
-import Navbar from '@/components/Navbar_secondary.vue'
+import Navbar from '@/components/navbar/Navbar_secondary.vue'
 import Email from '@/components/forms/Email.vue'
 import Password from '@/components/forms/Password.vue'
 import AlertMessage from '@/components/features/AlertMessage.vue'

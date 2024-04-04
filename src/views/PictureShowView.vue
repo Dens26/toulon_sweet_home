@@ -1,6 +1,6 @@
 <script setup>
-import Navbar from '@/components/Navbar_secondary.vue'
-import Carousel from '@/components/Carousel.vue'
+import Navbar from '@/components/navbar/Navbar_secondary.vue'
+import Carousel from '@/components/common/Carousel.vue'
 import { useDataStore } from '@/stores/data'
 
 const dataStore = useDataStore()
